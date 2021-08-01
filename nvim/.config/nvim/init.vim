@@ -21,9 +21,6 @@ set undofile
 
 set mouse=a
 
-" Color scheme
-"set termguicolors
-
 vmap < <gv
 vmap > >gv
 
@@ -37,10 +34,31 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
 
-"packadd! goyo.vim
+" Configure Plugins
+" Enable true color support
+set termguicolors
+
+" gruvbox color scheme
+let g:gruvbox_italic=1
+colo gruvbox
+set cursorline
+
+" Setup nvim-colorizer
+lua require'colorizer'.setup()
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Leader-g to toggle Goyo
 map <Leader>g :Goyo<CR>
