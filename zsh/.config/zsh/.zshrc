@@ -1,24 +1,17 @@
+setopt autocd              # change directory just by typing its name
+setopt promptsubst         # enable command substitution in prompt
+
+fpath=("$ZDOTDIR/functions" "$fpath[@]")
+
 # Set up the prompt
 
 autoload -Uz promptinit
 promptinit
-# prompt adam1
+#prompt adam1
 
-# enable vcs_info
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%F{green}%B%c%u%b%f'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' check-for-staged-changes true
-zstyle ':vcs_info:*' actionformats "%c%u%b|%a "
-zstyle ':vcs_info:*' stagedstr "%F{yellow}"
-zstyle ':vcs_info:*' unstagedstr "%F{red}"
-
-PROMPT='%B%(?..%F{red})$(shrink_path -f)>%f%b'
+# Load the theme
+# custom themes are defined in functions directory
+prompt mytheme2
 
 setopt histignorealldups sharehistory
 
@@ -105,6 +98,22 @@ f() {
 # enable command-not-found if installed
 [ -f /etc/zsh_command_not_found ] && . /etc/zsh_command_not_found
 
-. $ZDOTDIR/wsl-proxy.zsh
-. $ZDOTDIR/shrink-path.plugin.zsh
-. $ZDOTDIR/git.plugin.zsh
+# Source plugins
+for plug in $ZDOTDIR/*.plugin.zsh; . $plug
+
+# Autostart X at login
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx
+fi
+
+# if tmux is executable, X is running, and not inside a tmux session, then try to attach.
+# if attachment fails, start a new session
+# if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ]; then
+#   [ -z "${TMUX}" ] && { tmux attach || tmux; } >/dev/null 2>&1
+# fi
+
+# Exchange Esc and Capslock if in tty
+case $(tty) in /dev/tty[0-9]*)
+    echo Swich Esc and Capslock with loadkeys.
+    sudo loadkeys ~/.config/mykeymap.map
+esac
