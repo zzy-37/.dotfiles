@@ -1,0 +1,38 @@
+! Scheme 10
+! special
+*.foreground:   #cccccc
+*.background:   #333333
+*.cursorColor:  #cccccc
+
+! black
+*.color0:       #333333
+*.color8:       #808080
+
+! red
+*.color1:       #ff3333
+*.color9:       #ff8080
+
+! green
+*.color2:       #33ff80
+*.color10:      #80ff80
+
+! yellow
+*.color3:       #ffcc33
+*.color11:      #ffcc80
+
+! blue
+*.color4:       #3380ff
+*.color12:      #80ccff
+
+! magenta
+*.color5:       #cc80ff
+*.color13:      #ff80ff
+
+! cyan
+*.color6:       #33ffcc
+*.color14:      #80ffff
+
+! white
+*.color7:       #cccccc
+*.color15:      #ffffff
+

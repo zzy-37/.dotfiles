@@ -1,0 +1,30 @@
+#include "color-scheme/gruvbox-dark.xresources"
+!#include "scheme10.xresources"
+
+! XTerm Settings
+!
+! *.vt100.locale: true
+! *.vt100.locale: false
+! *.vt100.utf8: true
+! *.vt100.reverseVideo: true
+
+! *.vt100.internalBorder: 30
+*.vt100.geometry: 120x36
+
+*.vt100.faceName: DejaVu Sans Mono
+*.vt100.faceSize: 24
+
+*SimpleMenu*font: -adobe-helvetica-medium-r-normal--*-240-*-*-*-*-iso8859-*
+*SimpleMenu*menuLabel.font: -adobe-helvetica-bold-r-normal--*-240-*-*-*-*-iso8859-*
+
+! ST Settings
+!
+st.font: FiraCode Nerd Font:pixelsize=32:antialias=true:autohint=true
+!st.borderpx: 30
+
+! DWM Settings
+!
+!dwm.font: FiraCode Nerd Font:size=20
+!dwm.dmenufont: FiraCode Nerd Font:size=20
+
+Sxiv.font: FiraCode Nerd Font:pixelsize=32:antialias=true:autohint=true

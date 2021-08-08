@@ -1,0 +1,23 @@
+XF86MonBrightness{Down,Up}
+    xbacklight {-,+}1 && dunstify -a xbacklight -i display-brightness-symbolic.symbolic Backlight $(xbacklight) && updatestatus
+
+XF86Audio{Lower,Raise}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {-,+}5% && updatestatus
+
+XF86Audio{_,Mic}Mute
+    pactl set-{sink,source}-mute @DEFAULT_{SINK,SOURCE}@ toggle && updatestatus
+
+super + c
+    clipmenu
+
+super + w
+    lsw | dmenu -i -l 15 -p windows
+
+super + {v,r}
+    gtk-launch {vim,ranger}
+
+super + shift + p
+    desktopmenu
+
+super + ctrl + Return
+    st tmux
