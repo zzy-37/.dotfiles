@@ -1,5 +1,48 @@
-#include "color-scheme/gruvbox-dark.xresources"
-!#include "scheme10.xresources"
+!#include "color-scheme/gruvbox-dark.xresources"
+!#include "color-scheme/scheme10.xresources"
+
+#define base00 #333333
+#define base01 #ff3333
+#define base02 #33ff80
+#define base03 #ffcc33
+#define base04 #3380ff
+#define base05 #cc80ff
+#define base06 #33ffcc
+#define base07 #cccccc
+#define base08 #808080
+#define base09 #ff8080
+#define base0A #80ff80
+#define base0B #ffcc80
+#define base0C #80ccff
+#define base0D #ff80ff
+#define base0E #80ffff
+#define base0F #ffffff
+
+*foreground:   base07
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base07
+
+*color0:       base00
+*color1:       base01
+*color2:       base02
+*color3:       base03
+*color4:       base04
+*color5:       base05
+*color6:       base06
+*color7:       base07
+
+*color8:       base08
+*color9:       base09
+*color10:      base0A
+*color11:      base0B
+*color12:      base0C
+*color13:      base0D
+*color14:      base0E
+*color15:      base0F
 
 ! XTerm Settings
 !
@@ -24,7 +67,14 @@ st.font: FiraCode Nerd Font:pixelsize=32:antialias=true:autohint=true
 
 ! DWM Settings
 !
-!dwm.font: FiraCode Nerd Font:size=20
-!dwm.dmenufont: FiraCode Nerd Font:size=20
+dwm.font: FiraCode Nerd Font:size=20
+dwm.dmenufont: FiraCode Nerd Font:size=20
+dwm.borderpx: 2
+dwm.normbgcolor: base00
+dwm.normbordercolor: base00
+dwm.normfgcolor: base07
+dwm.selbgcolor: base08
+dwm.selbordercolor: base08
+dwm.selfgcolor: base0F
 
 Sxiv.font: FiraCode Nerd Font:pixelsize=32:antialias=true:autohint=true

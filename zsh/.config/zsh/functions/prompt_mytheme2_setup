@@ -9,7 +9,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
 zstyle ':vcs_info:git:*' formats ' %F{green}%c%u%b'
-zstyle ':vcs_info:*' actionformats "%c%u%b|%a "
+zstyle ':vcs_info:*' actionformats " %c%u%b|%a "
 zstyle ':vcs_info:*' stagedstr "%F{yellow}"
 zstyle ':vcs_info:*' unstagedstr "%F{red}"
 PROMPT='%B%(?..%F{red})$(shrink_path -f)${vcs_info_msg_0_}>%b'
