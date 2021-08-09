@@ -5,7 +5,6 @@ setopt autopushd
 
 # Add my shell function folder to fpath
 fpath=("$ZDOTDIR/functions" "$fpath[@]")
-fpath=("/usr/share/doc/zsh/examples/Functions" "$fpath[@]")
 
 # Set up the prompt
 

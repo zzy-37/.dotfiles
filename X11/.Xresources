@@ -77,4 +77,12 @@ dwm.selbgcolor: base08
 dwm.selbordercolor: base08
 dwm.selfgcolor: base0F
 
+! dmenu Settings
+!
+dmenu.font: FiraCode Nerd Font:size=20
+dmenu.normfgcolor: base07
+dmenu.normbgcolor: base00
+dmenu.selfgcolor: base0F
+dmenu.selbgcolor: base08
+
 Sxiv.font: FiraCode Nerd Font:pixelsize=32:antialias=true:autohint=true
