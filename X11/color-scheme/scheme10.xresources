@@ -1,7 +1,8 @@
 ! Scheme 10
 ! special
 *.foreground:   #cccccc
-*.background:   #333333
+!*.background:   #333333
+*.background:   #35363a
 *.cursorColor:  #cccccc
 
 ! black

@@ -18,17 +18,21 @@ xinput set-prop 12 354 0, 1 # Enable Click Finger
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-GDK_DPI_SCALE=2 ibus-daemon -rxd
+GDK_DPI_SCALE=2 ibus-daemon -xd
 
 # Hidpi scale
 export QT_SCALE_FACTOR=2
 export GDK_SCALE=2
 
 # settings for java and processing
-export PATH=$XDG_DATA_HOME/processing-4.0a3:$PATH
+# export PATH=~/.local/share/processing-4.0b1:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
-export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+# export _JAVA_OPTIONS=-Djava.util.prefs.userRoot=~/.config/java
+# export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=2.2'
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+# Chromium browser settings
+export CHROMIUM_FLAGS="--force-dark-mode --enable-features=WebUIDarkMode"
 
 # use dpass as sudo -A prompt
 export SUDO_ASKPASS=~/script/dpass

@@ -19,5 +19,8 @@ super + {v,r}
 super + shift + p
     desktopmenu
 
+super + shift + b
+    chromium
+
 super + ctrl + Return
-    st tmux
+    st tmux a || st tmux

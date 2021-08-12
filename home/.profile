@@ -41,12 +41,12 @@ if [ -e $HOME/.local/share/gems ] ;then
 fi
 
 # Set proxy
+host_ip=127.0.0.1
 # get host ip address if is wsl
-[ $WSLENV ] && host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ") ||
-    # localhost
-    host_ip=127.0.0.1
-    export http_proxy="http://$host_ip:10809"
-    export https_proxy="http://$host_ip:10809"
+[ $WSLENV ] && host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export http_proxy="http://$host_ip:10809"
+export https_proxy="http://$host_ip:10809"
+export no_proxy="apple.com"
 
 # Set Visual Editor
 export VISUAL=vim
